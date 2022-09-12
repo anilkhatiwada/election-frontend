@@ -14,5 +14,5 @@ urlpatterns = [
     path('agendas', AgendasView.as_view(), name="agendas"),
     path('donation', DonatonView.as_view(), name="donation"),
     path('events', EventsView.as_view(), name="events"),
-
+    path('notices', NoticesView.as_view(), name="notices"),
 ]
