@@ -1,0 +1,49 @@
+{% extends 'website/base.html' %} 
+
+{% block content %}
+    <section class="text-white body-font bg-gray-900">
+        <div class="container px-5 py-24 mx-auto">
+            <section class="text-white body-font bg-gray-900">
+                <div class="container px-5 py-24 mx-auto">
+                  <div class="flex flex-wrap w-full mb-20">
+                    <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">Events</h1>
+                      <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap -m-4  w-full">
+                   {% for x in notices  %}
+                    <div class="collapse collapse-arrow mt-4 w-full bg-orange-500 text-center">
+                      <input type="checkbox" /> 
+                      <div class="collapse-title text-xl font-medium flex justify-between">
+                        <div>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p class="text-sm ">2022-12-12</p>
+                        </div>
+                        <div>
+                           
+                            <p>{{x.title_en}}</p>
+                            {% if x.location_en %}
+                            <p class="text-sm text-gray-200">Place: {{x.location_en}}</p>
+                            {% endif %}
+                            {% if x.event_date %}
+                            <p class="text-sm text-gray-200">Event Date: {{x.event_date}}</p>
+                            {% endif %}
+                        </div>
+                        <div></div>
+                      </div>
+                      <div class="collapse-content"> 
+                        <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
+                        <p class="p-5">{{x.description_en}}</p>
+                      </div>
+                    </div>
+            
+                    {% endfor %}
+                  </div>
+                </div>
+              </section>
+        </div>
+      </section>
+    
+{% endblock %}
+
