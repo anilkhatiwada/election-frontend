@@ -24,51 +24,16 @@
   <h1 class="mb-8 text-center text-3xl font-bold  text-white">This is - what we do :</h1>
 
   <ul class="grid place-content-center sm:grid-cols-2 gap-8 m-6 text-white ">
+    {% for x in agendas %}
     <li class="flex">
-      <div class="px-4 text-5xl font-extralight text-indigo-700">01.</div>
+      <div class="px-4 text-5xl font-extralight text-indigo-700">{{ forloop.counter }}.</div>
       <div>
-        <div class="text-xl font-bold  ">Research</div>
-        <p class="max-w-xs py-2 text-sm">We love numbers! We collect data and insights, analyze
-          them then take the time to learn about your objectives, ask the right questions to understand your
-          business.</p>
+        <div class="text-xl font-bold  ">{{x.title_en}}</div>
+        <p class="max-w-xs py-2 text-sm">{{x.description_en}}</p>
       </div>
     </li>
-    <li class="flex">
-      <div class="px-4 text-5xl font-extralight text-indigo-700">02.</div>
-      <div>
-        <div class="text-xl font-bold ">Strategey</div>
-        <p class="max-w-xs py-2 text-sm ">Solutions are born from proper research, hard work, and
-          strong strategy. We build data-driven roadmaps for every project to make pave the way to success.
-        </p>
-      </div>
-    </li>
-    <li class="flex">
-      <div class="px-4 text-5xl font-extralight text-indigo-700">03.</div>
-      <div>
-        <div class="text-xl font-bold ">Design</div>
-        <p class="max-w-xs py-2 text-sm ">We design the right solution for your business. We
-          craft beautiful, intuitive, and user-friendly interfaces that are easy to use and easy to maintain.
-        </p>
-      </div>
-    </li>
-    <li class="flex">
-      <div class="px-4 text-5xl font-extralight text-indigo-700">04.</div>
-      <div>
-        <div class="text-xl font-bold ">Development</div>
-        <p class="max-w-xs py-2 text-sm ">We build the right solution for your business. We
-          craft beautiful, intuitive, and user-friendly interfaces that are easy to use and easy to maintain.
-        </p>
-      </div>
-    </li>
-    <li class="flex">
-      <div class="px-4 text-5xl font-extralight text-indigo-700">05.</div>
-      <div>
-        <div class="text-xl font-bold ">Deployment</div>
-        <p class="max-w-xs py-2 text-sm ">We build the right solution for your business. We
-          craft beautiful, intuitive, and user-friendly interfaces that are easy to use and easy to maintain.
-        </p>
-      </div>
-    </li>
+    {% endfor %}
+
   </ul>
 </div>
 <!-- ########## End of Agenda  ######### -->

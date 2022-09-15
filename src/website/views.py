@@ -3,7 +3,8 @@ from django.views.generic import View
 import requests
 import json
 
-url = "https://f058-103-163-182-45.in.ngrok.io/api/1/"
+url = "http://127.0.0.1:7000/api/1/"
+hosturl = "http://127.0.0.1:7000"
 
 
 class HomePageView(View):
@@ -36,12 +37,16 @@ class BlogPageView(View):
 
 class ImageGalleryView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/galleryimage.html')
+        data = requests.get(
+            url+"gallery").json()
+        return render(request, 'website/gallery.html', data)
 
 
 class ImageView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/image.html')
+        data = requests.get(
+            url+"gallery/"+str(kwargs["id"])).json()
+        return render(request, 'website/galleryimage.html', data)
 
 
 class VideoView(View):
