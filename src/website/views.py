@@ -51,12 +51,16 @@ class ImageView(View):
 
 class VideoView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/video.html')
+        data = requests.get(
+            url+"videos").json()
+        return render(request, 'website/video.html', data)
 
 
 class WhoAmIView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/whoiam.html')
+        data = requests.get(
+            url+"whoami").json()
+        return render(request, 'website/whoiam.html', data)
 
 
 class AgendaView(View):
@@ -71,7 +75,9 @@ class AgendasView(View):
 
 class DonatonView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/donaton.html')
+        data = requests.get(
+            url+"donations").json()
+        return render(request, 'website/donaton.html', data)
 
 
 class EventsView(View):

@@ -1,0 +1,24 @@
+{% extends 'website/base.html' %} 
+
+{% block content %}
+    <section class="text-white body-font bg-gray-900">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap w-full mb-20">
+            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">About Us</h1>
+              <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+            </div>
+          </div>
+          <div class="flex flex-wrap -m-4  w-full">
+            {% for x  in videos  %}
+            <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/{{x.video}}">
+            </iframe>
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+    
+{% endblock %}
+

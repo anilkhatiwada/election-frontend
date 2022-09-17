@@ -81,17 +81,15 @@
         fill="currentColor"></path>
     </svg>
     <blockquote>
-      <p class="text-2xl italic font-medium text-white ">"Job seekers are often eager to begin a new job as quickly as
-        possible. Similarly, companies ready to fill an open team position want to begin the transition as soon as they
-        find the right candidate to hire. Open, timely communication and informing candidates of interview decisions can
-        help both parties move forward efficiently.​"</p>
+      <p class="text-2xl italic font-medium text-white ">{{user.message_en}}</p>
     </blockquote>
     <figcaption class="flex justify-center items-center mt-6 space-x-3">
       <img class="w-6 h-6 rounded-full"
         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
       <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-        <cite class="pr-3 font-medium text-white ">Sagar Khadka</cite>
-        <cite class="pl-3 text-sm font-light text-gray-300 dark:text-gray-400">Kathmandu </cite>
+        <cite class="pr-3 font-medium text-white ">{{user.full_name_en}}</cite>
+        <cite class="pl-3 text-sm font-light text-gray-300 dark:text-gray-400">{{user.district_id}},
+          {{candidate.election_area}} </cite>
       </div>
     </figcaption>
   </figure>
@@ -106,15 +104,7 @@
       <div class="text-2xl text-white">WHY MY EXISTENCE AS A CANDIDATE?</div>
       <div class="text-white py-6">
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores dolores laborum soluta vel praesentium
-          itaque atque dolore nihil odit dolorem iure tempore repudiandae, eveniet rem, sequi quisquam deserunt corrupti
-          id!
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores dolores laborum soluta vel praesentium
-          itaque atque dolore nihil odit dolorem iure tempore repudiandae, eveniet rem, sequi quisquam deserunt corrupti
-          id!
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores dolores laborum soluta vel praesentium
-          itaque atque dolore nihil odit dolorem iure tempore repudiandae, eveniet rem, sequi quisquam deserunt corrupti
-          id!
+          {{candidate.why_me_en}}
         </p>
       </div>
 
@@ -180,27 +170,49 @@
       <h1 class="md:text-3xl text-2xl font-medium title-font text-gray-100">Get Connected</h1>
     </div>
     <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
-      <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-        <i class="fa-brands fa-facebook text-gray-900 text-3xl"></i>
-        <span class="ml-4 flex items-start flex-col leading-none">
-          <!-- <span class="text-xs text-gray-600 mb-1">GET IT ON</span> -->
-          <span class="title-font font-medium">Facebook</span>
-        </span>
-      </button>
-      <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-        <i class="fa-brands fa-facebook-messenger text-gray-900 text-3xl"></i>
-        <span class="ml-4 flex items-start flex-col leading-none">
-          <!-- <span class="text-xs text-gray-600 mb-1">Download on the</span> -->
-          <span class="title-font font-medium">Messenger</span>
-        </span>
-      </button>
-      <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-        <i class="fa-brands fa-instagram text-gray-900 text-3xl"></i>
-        <span class="ml-4 flex items-start flex-col leading-none">
-          <!-- <span class="text-xs text-gray-600 mb-1">Download on the</span> -->
-          <span class="title-font font-medium">Instagram</span>
-        </span>
-      </button>
+      {% if user.facebook_url %}
+      <a href="{{user.facebook_url}}"><button
+          class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+          <i class="fa-brands fa-facebook text-gray-900 text-3xl"></i>
+          <span class="ml-4 flex items-start flex-col leading-none">
+            <!-- <span class="text-xs text-gray-600 mb-1">GET IT ON</span> -->
+            <span class="title-font font-medium">Facebook</span>
+          </span>
+        </button>
+      </a>
+      {% endif %}
+      {% if user.instagram_url %}
+      <a href="{{user.instagram_url}}"><button
+          class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+          <i class="fa-brands fa-facebook-messenger text-gray-900 text-3xl"></i>
+          <span class="ml-4 flex items-start flex-col leading-none">
+            <!-- <span class="text-xs text-gray-600 mb-1">Download on the</span> -->
+            <span class="title-font font-medium">Instagram</span>
+          </span>
+        </button></a>
+      {% endif %}
+      {% if user.youtube_url %}
+      <a href="{{user.youtube_url}}"><button
+          class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+          <i class="fa-brands fa-instagram text-gray-900 text-3xl"></i>
+          <span class="ml-4 flex items-start flex-col leading-none">
+            <!-- <span class="text-xs text-gray-600 mb-1">Download on the</span> -->
+            <span class="title-font font-medium">Youtube</span>
+          </span>
+        </button>
+      </a>
+      {% endif %}
+      {% if user.twitter_url %}
+      <a href="{{user.twitter_url}}"><button
+          class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+          <i class="fa-brands fa-instagram text-gray-900 text-3xl"></i>
+          <span class="ml-4 flex items-start flex-col leading-none">
+            <!-- <span class="text-xs text-gray-600 mb-1">Download on the</span> -->
+            <span class="title-font font-medium">twitter</span>
+          </span>
+        </button>
+      </a>
+      {% endif %}
     </div>
   </div>
 </section>
