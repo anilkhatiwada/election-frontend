@@ -16,9 +16,8 @@
                   {% if forloop.counter|divisibleby:2 %}
                   <!-- First row -->
                   <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col ">
-                    <div class="sm:w-1/2 sm:h-1/2 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 border-solid border-4 border-sky-500">
-                      <img class=" rounded-full  " src="{{hosturl}}{{x.primary_image}}" alt="profile picture">
-              
+                    <div class="sm:w-1/2 sm:order-none order-first sm:h-1/2 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 border-solid border-4 border-orange-500">
+                      <img class=" rounded-full" src="{{hosturl}}{{x.primary_image}}" alt="profile picture">
                     </div>
                     <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                       <h2 class="text-gray-100 text-lg title-font font-medium mb-2">{{x.title_en}}</h2>
