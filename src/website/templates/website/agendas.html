@@ -1,84 +1,46 @@
-{% extends 'website/base.html' %} 
+{% extends 'website/base.html' %}
 
 {% block content %}
-  
-  <section class="text-white body-font bg-gray-900">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap w-full mb-20">
+
+<section class="text-white body-font bg-gray-900">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20">
             <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">Agendas</h1>
-              <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">Agendas</h1>
+                <div class="h-1 w-20 bg-indigo-500 rounded"></div>
             </div>
-          </div>
-          <div class="flex flex-wrap justify-center -m-4  w-full ">
+        </div>
+        <div class="flex flex-wrap justify-center -m-4  w-full ">
             <section class="">
                 <div class=" px-4 mx-auto max-w-screen-xl  lg:px-6">
                     <div class=" w-full mb-8 lg:mb-16">
-                        <h2 class="mb-4 text-4xl tracking-tight  text-center  text-white">Designed for community like yours</h2>
+                        <h2 class="mb-4 text-4xl tracking-tight  text-center  text-white">Designed for community like
+                            yours</h2>
                     </div>
                     <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 ">
                         <!-- Single Department -->
+                        {% for x in agendas %}
                         <div class="bg-gray-800 p-3 rounded-lg">
-                            <a href="">
-                            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
-                                <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold dark:text-white">Internal Medicine </h3>
-                            <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
-                        </a>
-                        </div>
-                        <!-- Single Department -->
-                        <div class="bg-gray-800 p-3 rounded-lg">
-                            <a href="">
-                            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
-                                <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold dark:text-white">Surgery</h3>
-                            <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
+                            <a href="/agenda/{{x.id}}">
+                                <div
+                                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
+                                    <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">{{x.title_en}} </h3>
+                                <p class="text-gray-500 dark:text-gray-400">{{x.description_en}}</p>
                             </a>
                         </div>
-                        <div class="bg-gray-800 p-3 rounded-lg">
-                            <a href="">
-                            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
-                                <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold dark:text-white">Gynaecology & Obstetrics</h3>
-                            <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
-                            </a>
-                        </div>
-                        <div class="bg-gray-800 p-3 rounded-lg">
-                            <a href="">
-                            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
-                                <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold dark:text-white">Pediatrics</h3>
-                            <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
-                            </a>
-                        </div>
-                        <div class="bg-gray-800 p-3 rounded-lg">
-                            <a href="">
-                            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
-                                <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold dark:text-white">Anaesthesia</h3>
-                            <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
-                            </a>
-                        </div>
-                        <div class="bg-gray-800 p-3 rounded-lg">
-                            <a href="">
-                            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-orange-700 lg:h-12 lg:w-12 ">
-                                <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <h3 class="mb-2 text-xl font-bold dark:text-white">Orthopedics</h3>
-                            <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
-                            </a>
-                        </div>
-                       
+                        {% endfor %}
                     </div>
                 </div>
-              </section>
-          </div>
+            </section>
         </div>
-      </section>
+    </div>
+</section>
 
-      {% endblock %}
+{% endblock %}

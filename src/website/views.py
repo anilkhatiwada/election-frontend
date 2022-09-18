@@ -65,12 +65,15 @@ class WhoAmIView(View):
 
 class AgendaView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/agenda.html')
+        data = requests.get(url+"agenda/"+str(kwargs["id"])).json()
+        return render(request, 'website/agenda.html', data)
 
 
 class AgendasView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'website/agendas.html')
+        data = requests.get(
+            url+"agendas").json()
+        return render(request, 'website/agendas.html', data)
 
 
 class DonatonView(View):
@@ -95,3 +98,8 @@ class NoticesView(View):
         data = requests.get(
             url+"notices").json()
         return render(request, 'website/notices.html', data)
+
+
+class JoinOurTeam(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'website/jointeam.html')
