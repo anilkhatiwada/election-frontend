@@ -15,10 +15,15 @@
             src="https://www.youtube.com/embed/{{x.video}}">
             </iframe> -->
 
-            <div class="flex justify-center  w-full mb-12 ">
-              <!-- <iframe class=" border-8 border-indigo-600 object-cover object-center rounded-lg" width="860" height="415" src="https://www.youtube.com/embed/0hOqy8JOEqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-              <iframe class=" border-8 border-indigo-600 object-cover object-center rounded-lg" width="860" height="415" src="https://www.youtube.com/embed/{{x.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="flex justify-center  w-full mb-4 ">
+              <div>
+                <iframe class=" border-8 border-indigo-600 object-cover object-center rounded-lg" width="860" height="415" src="https://www.youtube.com/embed/{{x.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </div>
+            <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+              <h2 class="mb-4 text-2xl text-gray-100 ">{{x.title_en}}</h2>
+          </div> 
+
             {% endfor %}
 
           </div>
