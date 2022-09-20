@@ -25,13 +25,11 @@
       <div class="flex items-center">
         <a href="tel:5541251234" class="mr-6 text-sm font-medium text-gray-500 dark:text-black hover:underline">
           <button type="button"
-            class="py-1.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-full border border-gray-200 hover:bg-gray-700  focus:z-10 focus:ring-4 focus:ring-gray-200 ">Call
-            Us</button>
+            class="py-1.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-full border border-gray-200 hover:bg-gray-700  focus:z-10 focus:ring-4 focus:ring-gray-200 ">सम्पर्क</button>
         </a>
         <a href="{% url 'join_our_team' %}" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">
           <button type="button"
-            class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-1.5 text-center mr-2 mb-2 ">Join
-            our Team</button>
+            class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-1.5 text-center mr-2 mb-2 ">हामीसंग आवद्द हुनुहोस्</button>
         </a>
       </div>
     </div>
@@ -63,14 +61,14 @@
             <a href="{% url 'home_page' %}"
               class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
               aria-current="page">
-              Home
+              गृह पृष्ठ
             </a>
           </li>
           <li>
             <a href="#">
               <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                 class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">
-                Gallery
+                ग्यालेरी
                 <svg class="ml-1 w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -91,12 +89,12 @@
               <ul class="py-1 text-sm " aria-labelledby="dropdownLargeButton">
                 <li>
                   <a href="{% url 'gallery' %}" class="block py-2 px-4 hover:bg-gray-600">
-                    Image
+                    फोटोहरु
                   </a>
                 </li>
                 <li>
                   <a href="{% url 'video' %}" class="block py-2 px-4 hover:bg-gray-600 ">
-                    Video
+            भिडियोहरु
                   </a>
                 </li>
               </ul>
@@ -106,26 +104,26 @@
           <li>
             <a href="{% url 'whoami' %}"
               class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-              Who I Am
+              म को हू ?
             </a>
           </li>
           <li>
             <a href="{% url 'agendas' %}"
               class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-              Agenda
+              एजेण्डाहरु
             </a>
           </li>
           <li>
             <a href="{% url 'donation' %}"
               class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-              Donation
+              आर्थिक सहयोग 
             </a>
           </li>
           
           <li>
             <a href="{% url 'notices' %}"
               class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-              Notice
+              सुचनाहरु 
             </a>
           </li>
         </ul>
@@ -149,7 +147,7 @@
           d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
         </path>
       </svg>
-      <p>{{user.full_name_en}}<br>Member of the House of Representatives, Candidate<br>Kathmandu Election Area - 5</p>
+      <p>{{user.full_name_np}}<br>प्रतिनिधि सभा सदस्य, उमेद्वार <br>काठमान्डू क्षेत्र नम्वर -३</p>
     </div>
     <div>
       <span class="footer-title">Courses</span>
